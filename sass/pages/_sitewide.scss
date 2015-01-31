@@ -1,0 +1,25 @@
+.page { 
+	@include container(80em);
+	color: $grey-secondary;
+}
+
+
+
+a {
+	color: $link;
+	text-decoration: none;
+	@extend .strip-margin-padding;
+	&:hover   { color: $link-hover-state; }
+	&:active  { color: $link-active-state;}
+	&:visited { color: $link-visited-state;}
+	&:focus   { color: $link-focus-state;}
+}
+
+::selection {
+	color: $selection ;
+  background: $selection-bg ; /* Safari */
+  }
+::-moz-selection {
+	color: $selection ;
+  background: $selection-bg ; /* Firefox */
+}

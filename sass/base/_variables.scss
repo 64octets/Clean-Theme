@@ -1,0 +1,147 @@
+// font-family: 'Merriweather', 'Palatino', serif;
+
+// COLORS
+
+// The basics
+$black          : #000;
+$white          : #fff;
+
+$alertColor     : #e70000;
+$successColor   : #78af01;
+$highlightColor : #7DD7EF;
+
+// Site custom colors
+
+$mainColor      : $black;
+$primaryColor   : $mainColor;
+$secondaryColor : $white;
+
+$textColor      : rba(0,0,0,1);
+$headercolor    : $primaryColor;
+$grey-secondary :rgba(0,0,0,0.5); // FOR INTRO AND SUCH
+
+// Links and Buttons, incl states
+$link               : $primaryColor;
+$link-active-state  : $secondaryColor;
+$link-hover-state   : $secondaryColor; 
+$link-visited-state : $secondaryColor;
+$link-focus-state   : $secondaryColor;
+
+$selection-bg   : yellow;
+$selection      : $mainColor;
+
+
+// Standard colors: for standard 4K and other brand colors.
+// Note: these are just for reference, and some brands have multiple colors.
+$color-facebook : #3B5998;
+$color-twitter  : #33CCFF;
+$color-youtube  : #FF3333;
+$color-pinterest: #990000;
+$color-skype    : #12A5F4;
+$color-flickr   : #FE0883;
+$color-foursquare: #8FD400;
+$color-instagram: #4E433C;
+$color-linkedin : #4875B4;
+$color-tumblr   : #2B4964;
+$color-vimeo    : #86B32D;
+$color-google   : #D6492C;
+$color-fk       : #66B360;
+
+// Table colors.
+$thead          : #4479b1;
+$tbody          : #d5dde7;
+
+
+// Font prettiness
+
+// The base font size.
+$base-font-size: 16px !default;
+
+// The base line height determines the basic unit of vertical rhythm.
+$base-line-height: 24px !default;
+
+// The length unit in which to output vertical rhythm values.
+// Supported values: px, em, rem.
+$rhythm-unit: 'em' !default;
+
+// This variable is a copy of the one used in Compass' support module.
+
+// Optional map of minimum browser versions to support. For example, to
+// remove support for IE 7 and earlier, set $browser-minimum-versions['ie']
+// to '8'.
+$browser-minimum-versions: (
+  'chrome':  null,
+  'firefox': null,
+  'ie':      null,
+  'safari':  null,
+  'opera':   null
+) !default;
+
+
+// Set this to true to force CSS output to exactly match normalize.css.
+$strict-normalize: true !default;
+
+// The default font family.
+$base-font-family: sans-serif !default;
+
+// The font sizes for h1-h6.
+$h1-font-size: 2    * $base-font-size !default;
+$h2-font-size: 1.5  * $base-font-size !default;
+$h3-font-size: 1.17 * $base-font-size !default;
+$h4-font-size: 1    * $base-font-size !default;
+$h5-font-size: 0.83 * $base-font-size !default;
+$h6-font-size: 0.67 * $base-font-size !default;
+
+// The amount lists and blockquotes are indented.
+$indent-amount: 40px !default;
+
+// After the default variables are set, import the required Compass partials.
+@import "compass/support";
+@import "compass/css3/box-sizing";
+@import "compass/typography/vertical_rhythm";
+
+
+@if not $strict-normalize or support-legacy-browser(ie, "7") {
+  /**
+   * Establish a vertical rhythm unit using $base-font-size, $base-line-height,
+   * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
+   * body `font-size` is set using `em` units.
+   */
+
+  @include establish-baseline();
+}
+
+// $base-font-family       :'Merriweather', serif; 
+
+
+
+
+// Default Susy Settings
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 4,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: show,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: true,
+    box-sizing: true,
+    clearfix: true,
+    rem: true,
+  )
+);
+
+@include border-box-sizing;
