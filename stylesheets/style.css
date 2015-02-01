@@ -23,6 +23,48 @@ html {
   box-sizing: border-box;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+}
+a:active {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+a:focus {
+  color: #fff;
+}
+
+p {
+  color: rba(0, 0, 0, 1);
+  line-height: 2;
+}
+
+::selection {
+  color: #000;
+  background: yellow;
+  /* Safari */
+}
+
+::-moz-selection {
+  color: #000;
+  background: yellow;
+  /* Firefox */
+}
+
 .clearfix {
   zoom: 1;
 }
@@ -40,7 +82,7 @@ html {
   overflow: hidden;
 }
 
-.strip-margin-padding, a {
+.strip-margin-padding, a, p {
   margin: 0;
   padding: 0;
 }

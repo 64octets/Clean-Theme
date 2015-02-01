@@ -1,0 +1,33 @@
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 { color: $headercolor; }
+
+a {
+	@extend .strip-margin-padding;
+
+	color: $link;
+	text-decoration: none;
+	
+	&:hover   { color: $link-hover-state; }
+	&:active  { color: $link-active-state;}
+	&:visited { color: $link-visited-state;}
+	&:focus   { color: $link-focus-state;}
+}
+
+p {
+	@extend .strip-margin-padding;
+	color: $textColor;
+	line-height: 2;
+}
+
+::selection {
+	color: $selection ;
+  background: $selection-bg ; /* Safari */
+  }
+::-moz-selection {
+	color: $selection ;
+  background: $selection-bg ; /* Firefox */
+}
+
