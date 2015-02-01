@@ -41,9 +41,17 @@ MU PLUGINS
 
 The markup for the test pages (html elements & image alignment)
 
+1 February 2015
+
+V0.0.1
+* Included a basestyle to give all the HTML elements their base styling which stem from variables.scss
+* Removed all IE7/8 nonsense from normalize.scss (bring on the fanciness)
+* Basestyle has more stuff in it.
+
 TO DO
 =====
 1. scripts (custom.js, html5.js and modernizr)
 2. clean the pages.
 3. document the variables. 
 4. put the helper texts in this theme folder.
+5. think about the partial names

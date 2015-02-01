@@ -1,8 +1,28 @@
 html {
-	-webkit-font-smoothing: antialiased;
+
+  // Show a background image that can be used to debug your alignments.
+  // @include debug-vertical-alignment();
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%; 
+  -webkit-font-smoothing: antialiased;   // maxvoltar.com/archive/-webkit-font-smoothing
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  font-family: $base-font-family;
+  font-size: 62.5%; 
+  width: 100%;
+  height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 { color: $headercolor; }
+body {
+	width: 100%;
+	height: 100%;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+	color: $headercolor; 
+	clear: both;
+}
 
 a {
 	@extend .strip-margin-padding;
@@ -20,6 +40,11 @@ p {
 	@extend .strip-margin-padding;
 	color: $textColor;
 	line-height: 2;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 ::selection {
