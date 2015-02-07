@@ -95,42 +95,31 @@ function deregister_contact_form() {
 add_action('wp_enqueue_scripts', 'scripts_and_styles', 999);
 add_action( 'wp', 'deregister_contact_form');
 
+
 ///=============================================
 // 1A. LOAD GOOGLE WEBFONTS
 //=============================================
 // Copied from TwentyThirteen Theme
 
-// function googleweb_fonts_url() {
-//   $fonts_url = '';
+function googleweb_fonts_url() {
+  $fonts_url = '';
 
-//   /* Translators: If there are characters in your language that are not
-//    * supported by Oswald, translate this to 'off'. Do not translate into your
-//    * own language.
-//    */
-//   // $oswald = _x( 'on', 'Oswald font: on or off', 'jeroentrispel' );
-//   $merriweather = _x( 'on', 'Merriweather font: on or off', 'ansforthewin15;' );
-  
-//     // if ( 'off' !== $merriweather || 'off' !== $oswald || 'off' !== $lora ) {
-//       $font_families = array();
-
-//     if ( 'off' !== $merriweather )
-//       $font_families[] = 'Merriweather:400,300,300italic,400italic,700,700italic';
-
-//     // if ( 'off' !== $montserrat )
-//       // $font_families[] = 'Montserrat:400,700';
-
-//     // if ( 'off' !== $lora )
-//       // $font_families[] = 'Lora:400,700,400italic,700italic';
-
-//     $query_args = array(
-//       'family' => urlencode( implode( '|', $font_families ) ),
-//       'subset' => urlencode( 'latin,latin-ext' ),
-//     );
-//     $fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
-//   }
-
-//   return $fonts_url;
-// }
+  /* Translators: If there are characters in your language that are not
+   * supported by Oswald, translate this to 'off'. Do not translate into your
+   * own language.
+   */
+  $merriweather = _x( 'on', 'Merriweather font: on or off', 'ansforthewin15;' );
+  if ( 'off' !== $merriweather ) {
+    $font_families = array();
+    $font_families[] = 'Merriweather:400,300,300italic,400italic,700,700italic';
+    $query_args = array(
+      'family' => urlencode( implode( '|', $font_families ) ),
+      'subset' => urlencode( 'latin,latin-ext' ),
+    );
+    $fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+  }
+  return $fonts_url;
+}
 
 //=============================================
 // Add edit button for any specific content you
