@@ -56,6 +56,8 @@ V0.0.2
 * Typography partial added
 * fixed the google_webfont function
 
+* responsive images pasted in from WP
+
 
 TO DO
 =====
@@ -64,3 +66,15 @@ TO DO
 3. document the variables. 
 4. put the helper texts in this theme folder.
 5. think about the partial names
+
+Partial dumplist
+================
+(this list is just a temporary measure)
+Tables
+Captions
+Forms
+Blockquotes
+Typography
+Fonts
+Icons
+Images
