@@ -1,0 +1,57 @@
+form {}
+
+input,
+button,
+a.button,
+select,
+textarea {
+	@include border-radius(4px);
+	background-color: whitesmoke;
+	border: 2px solid whitesmoke;
+	padding: 1em;
+	&:focus {
+		outline: none;
+		padding: 1em;
+	}
+	// Suppress red glow that Firefox
+	// adds to form fields by default.
+	&:invalid {
+		box-shadow: none;
+	}
+}
+
+button,
+a.button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+	&:hover {}
+	&:focus {
+		outline: none;
+	}
+
+	// Kill phantom spacing and dotted
+	// border that appears in Firefox.
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+
+}

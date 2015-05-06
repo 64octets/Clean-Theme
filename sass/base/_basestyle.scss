@@ -11,9 +11,13 @@ html {
   font-size: 62.5%; 
   width: 100%;
   height: 100%;
+  @extend .strip-margin-padding;
+
 }
 
 body {
+  @extend .strip-margin-padding;
+
 	width: 100%;
 	height: 100%;
   margin: 0;
@@ -49,6 +53,13 @@ img {
 ::-moz-selection {
 	color: $selection ;
   background: $selection-bg ; /* Firefox */
+}
+
+div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, form, p,
+blockquote, th, td {
+  direction: ltr;
+  @extend .strip-margin-padding;
 }
 
 

@@ -58,6 +58,14 @@ V0.0.2
 
 * responsive images pasted in from WP
 
+08 February 2015
+* fix. Moved variables to utilities
+* added forms, images and other styling
+
+09 February 2015
+* jquery added
+
+
 
 TO DO
 =====
@@ -66,6 +74,8 @@ TO DO
 3. document the variables. 
 4. put the helper texts in this theme folder.
 5. think about the partial names
+6. Add form elements to the test-content
+7. Add gulp-notify in Gulpfile.
 
 Partial dumplist
 ================
@@ -78,3 +88,4 @@ Typography
 Fonts
 Icons
 Images
+Navigation

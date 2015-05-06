@@ -2,6 +2,30 @@
  * Responsive images
  * Fluid images for posts, comments, and widgets
  */
+
+ figure {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  > img {
+      display: block;
+  }
+}
+
+ img {
+  max-width: 100%;
+  height: auto;
+}
+
+embed,
+iframe,
+object,
+video {
+  max-width: 100%;
+}
+
+// Wordpress Specific
+
 .entry-content img,
 .entry-summary img,
 .comment-content img,
@@ -28,12 +52,7 @@ img.wp-post-image {
 }
 
 /* Make sure videos and embeds fit their containers. */
-embed,
-iframe,
-object,
-video {
-  max-width: 100%;
-}
+
 
 /* Override the Twitter embed fixed width. */
 .entry-content .twitter-tweet-rendered {
