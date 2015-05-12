@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 // Compile Our Sass with Bundle[d] Compass
 gulp.task('sass', function() {
-  return gulp.src('./sass/*.scss')
+  return gulp.src('sass/*.scss')
   .pipe(plugins.compass({
     config_file: './config.rb',
     css: 'stylesheets',
@@ -24,7 +24,7 @@ gulp.task('sass', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
   // Watch js and scss file changes.
-  gulp.watch('sass/**/*.scss', ['sass']);
+  gulp.watch('sass/style.scss', ['sass']);
 });
 
 gulp.task('minify', function() {
