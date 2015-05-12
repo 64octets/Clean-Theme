@@ -65,6 +65,8 @@ V0.0.2
 09 February 2015
 * jquery added
 
+12 may 2015
+* updated Gulp
 
 
 TO DO
@@ -76,6 +78,7 @@ TO DO
 5. think about the partial names
 6. Add form elements to the test-content
 7. Add gulp-notify in Gulpfile.
+8. Update jquery.
 
 Partial dumplist
 ================
