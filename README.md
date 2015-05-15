@@ -67,7 +67,11 @@ V0.0.2
 
 12 may 2015
 * updated Gulp
+* removed unnecessary .css
 
+15 may 2015
+* fontawesome added
+* cleanup for some partials
 
 TO DO
 =====
