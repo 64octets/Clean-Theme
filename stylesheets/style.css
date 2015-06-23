@@ -2968,11 +2968,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   clear: both;
 }
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
-  margin-top: 0;
-}
 
 h1 {
+  font-size: 32px;
+  line-height: 32px;
   font-size: 32px;
   line-height: 32px;
   font-size: 3.2rem;
@@ -2982,8 +2981,10 @@ h1 {
 h2 {
   font-size: 24px;
   line-height: 24px;
-  font-size: 2.4rem;
-  line-height: 2.4rem;
+  font-size: 32px;
+  line-height: 32px;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
 }
 
 h3 {
@@ -3192,35 +3193,6 @@ input[type="button"]::-moz-focus-inner {
   margin-left: auto;
   margin-right: auto;
   color: rgba(0, 0, 0, 0.5);
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
-a:hover {
-  color: #fff;
-}
-a:active {
-  color: #fff;
-}
-a:visited {
-  color: #fff;
-}
-a:focus {
-  color: #fff;
-}
-
-::selection {
-  color: #000;
-  background: yellow;
-  /* Safari */
-}
-
-::-moz-selection {
-  color: #000;
-  background: yellow;
-  /* Firefox */
 }
 
 /**

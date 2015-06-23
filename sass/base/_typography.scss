@@ -1,11 +1,22 @@
 h1, h2, h3, h4, h5, h6 {
 	color: $headercolor; 
   clear: both;
-  &:first-child { margin-top: 0; }
 }
 
-h1 { @include font-size( 32, 32 ); }
-h2 { @include font-size( 24, 24 ); }
+// Please change these font-size to design specs
+h1 { 
+	font-size: 32px;
+	line-height: 32px;
+
+	// Uses rem calc font-size(fontsize,line-height)
+	@include font-size( 32, 32 );
+}
+h2 { 
+	font-size: 24px;
+	line-height: 24px;
+	// Uses rem calc font-size(fontsize,line-height)
+	@include font-size( 32, 32 );
+}
 h3 { @include font-size( 17, 17 ); }
 h4 { @include font-size( 16, 16 ); }
 h5 { @include font-size( 13, 13 ); }
