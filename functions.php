@@ -3,13 +3,13 @@
 *  Functions built by Mayconnect.
 */
 
-add_action('after_setup_theme','launch_ansforthewin15_theme');
+add_action('after_setup_theme','launch_cleantheme_theme');
 
 // Setup contet
 if ( ! isset( $content_width ) )
   $content_width = 960;
 
-function launch_ansforthewin15_theme() {
+function launch_cleantheme_theme() {
   //============================================
   // Theme Support
   //============================================
@@ -125,7 +125,7 @@ function googleweb_fonts_url() {
 // Add edit button for any specific content you
 // wish to edit.
 //=============================================
-function ansforthewin15_edit_link() {
+function cleantheme_edit_link() {
   if ( ! post_password_required()) :
     edit_post_link( __( 'Edit', '' ), '<span class="edit-link">', '</span>' );
     endif;
@@ -187,8 +187,8 @@ function social_menu(){
 
 function register_all_menus() {
   register_nav_menus(array( // Using array to specify more menus if needed
-    'main-menu' => __('Main Menu', 'jeroentrispel'), // Main Navigation
-    'social-menu' => __('Social Menu', 'jeroentrispel'), // Menu for the social icons
+    'main-menu' => __('Main Menu', 'cleantheme'), // Main Navigation
+    'social-menu' => __('Social Menu', 'cleantheme'), // Menu for the social icons
     // 'extra-menu' => __('Extra Menu', 'classy') // Extra Navigation if needed (duplicate as many as you need!)
   ));
 }
@@ -197,7 +197,7 @@ add_action( 'init', 'register_all_menus' );
 
 function main_sidebar() {
   register_sidebar( array(
-    'name'          => __( 'Sidebar Menu', 'jeroentrispel' ),
+    'name'          => __( 'Sidebar Menu', 'cleantheme' ),
     'id'            => 'sidebar-menu',
     'description'   => __( 'Sidebar that goes on the default pages', 'text_domain' ),
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -233,20 +233,20 @@ function remove_category_rel_from_category_list($thelist)
 // META INFORMATION
 //=============================================
 // This was taken from the twentythirteen theme. I adapted it.
-if ( ! function_exists( 'classy_entry_meta' ) ) :
+if ( ! function_exists( 'cleantheme_entry_meta' ) ) :
 
-  function classy_entry_meta() {
+  function cleantheme_entry_meta() {
     if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
         mayconnect_entry_date();
 
       // Translators: used between list items, there is a space after the comma.
-      $categories_list = get_the_category_list( __( ', ', 'mayconnect' ) );
+      $categories_list = get_the_category_list( __( ', ', 'cleantheme' ) );
       if ( $categories_list ) {
         echo '<span class="categories-links">' . $categories_list . '</span>';
       }
 
       // Translators: used between list items, there is a space after the comma.
-      // $tag_list = get_the_tag_list( '', __( ', ', 'mayconnect' ) );
+      // $tag_list = get_the_tag_list( '', __( ', ', 'cleantheme' ) );
       // if ( $tag_list ) {
       //   echo '<span class="tags-links">' . $tag_list . '</span>';
       // }
@@ -262,11 +262,11 @@ if ( ! function_exists( 'classy_entry_meta' ) ) :
     }
   endif;
 
-if ( ! function_exists( 'classy_entry_date' ) ) :
+if ( ! function_exists( 'cleantheme_entry_date' ) ) :
 
-  function trispel_entry_date( $echo = true ) {
+  function cleantheme_entry_date( $echo = true ) {
     if ( has_post_format( array( 'chat', 'status' ) ) )
-      $format_prefix = _x( '%1$s on %2$s', '1: post format name. 2: date', 'trispel' );
+      $format_prefix = _x( '%1$s on %2$s', '1: post format name. 2: date', 'cleantheme' );
     else
       $format_prefix = '%2$s';
 
