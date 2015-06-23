@@ -101,6 +101,3 @@ DEPENDENCIES
   compass-rails (~> 2.0.0)
   sass-rails (~> 5.0.0.beta1)
   susy
-
-BUNDLED WITH
-   1.10.4

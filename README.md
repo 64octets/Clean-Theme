@@ -73,6 +73,7 @@ V0.0.2
 * fontawesome added
 * cleanup for some partials
 
+
 TO DO
 =====
 1. scripts (custom.js and modernizr)

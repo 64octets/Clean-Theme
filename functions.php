@@ -1,13 +1,9 @@
 <?php
 /*
-*  Functions built by Mayconnect.
+*  Functions built by Sumedia.
 */
 
 add_action('after_setup_theme','launch_cleantheme_theme');
-
-// Setup contet
-if ( ! isset( $content_width ) )
-  $content_width = 960;
 
 function launch_cleantheme_theme() {
   //============================================
@@ -189,7 +185,7 @@ function register_all_menus() {
   register_nav_menus(array( // Using array to specify more menus if needed
     'main-menu' => __('Main Menu', 'cleantheme'), // Main Navigation
     'social-menu' => __('Social Menu', 'cleantheme'), // Menu for the social icons
-    // 'extra-menu' => __('Extra Menu', 'classy') // Extra Navigation if needed (duplicate as many as you need!)
+    // 'extra-menu' => __('Extra Menu', 'cleantheme') // Extra Navigation if needed (duplicate as many as you need!)
   ));
 }
 add_action( 'init', 'register_all_menus' );
