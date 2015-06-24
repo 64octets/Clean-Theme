@@ -7,3 +7,8 @@ Version: 0.01
 * Adapted the style.css
 * Cleaned up the header
 * Cleaned up the template files
+
+
+To-Do
+* Responsive Typography needs attention.
+
