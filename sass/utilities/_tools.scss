@@ -72,6 +72,7 @@
   }
 }
 // Makes a bleed happen in the div you apply it too
+// it is better to use SusyTwo
 @mixin make-full-width {
   margin: 0 -1000px;
   padding: 0 1000px;

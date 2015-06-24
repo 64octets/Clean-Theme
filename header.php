@@ -19,8 +19,8 @@
 
 <body <?php body_class(); ?>>
 <div class="page hfeed site">
+	
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'cleantheme' ); ?></a>
-
 	
 		<header class="site-header" role="banner">
 			
@@ -36,6 +36,7 @@
 						<p class="site-description"><?php echo $description; ?></p>
 					<?php endif;
 				?>
+				
 		</header><!-- .site-header -->
 
 	<main id="main" class="site-main" role="main">

@@ -1,11 +1,20 @@
-# Clean Theme for Magalie Linda's crayzay biznizzes
+# This version is adapted to Sumedia coding standards.
+It contains a log in the [Sumedia file]() where you can see what I've changed and why.
+I've tried to adapt it as much to everybody's needs and sometimes these things change.
 
-A responsive theme for wordpress.
-Clean, clear and as much documented as possible.
+If the project requires it, you can change the templates.
+Do not:
+- change the base
+- change _utilities.scss except variables.
 
-Made by Magalie Linda Chetrit, out of laziness.
+This theme contains
+* [SusyTwo]()
+* [Breakpoint]()
+* font-awesome in sass and the fonts
+* html5.js a HTML5 shiv
 
-A start list of things I want in this theme.
+
+
 
 SASS
      normalize by john albin
@@ -19,6 +28,7 @@ PAGES
      style.css
      index.php
      header.php     
+     home.php
      footer.php
      page.php
      functions.php
@@ -72,6 +82,7 @@ V0.0.2
 15 may 2015
 * fontawesome added
 * cleanup for some partials
+* added home.php for frontpage
 
 
 TO DO
