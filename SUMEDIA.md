@@ -11,7 +11,8 @@ Version: 0.01
 
 26 june 2015
 * Supports custom post type
-
+* Updated the googlewebfont functions
+* Added content pages
 
 To-Do
 * Responsive Typography needs attention.

@@ -9,11 +9,11 @@ function launch_cleantheme_theme() {
   //============================================
   // Theme Support
   //============================================
-    add_theme_support( 'post-formats', array( 'none', 'gallery', 'link', 'image', 'quote', 'video' ) );
-    add_theme_support( 'custom-background' );
-    add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-    add_theme_support( 'menus' );
+  // add_theme_support( 'post-formats', array( 'none', 'gallery', 'link', 'image', 'quote', 'video' ) );
+  // add_theme_support( 'custom-background' );
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+  add_theme_support( 'menus' );
 }
 
 remove_action( 'wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
@@ -45,7 +45,6 @@ add_filter('the_generator','disable_version');
 // SCRIPTS AND STYLES ENQUEUING
 //=============================================
 
-
 // Deregistering styles and scripts that might be in the wp core.
 // Registering all kinds of cool styles and scripts.
 
@@ -54,8 +53,10 @@ function scripts_and_styles() {
 
     wp_deregister_script('jquery');
     wp_deregister_style( 'functions-style-css');
-    wp_deregister_style( 'twentythirteen-style-css');
 
+
+    // This deregisters styles and scripts for contact-form-7
+    // It loads with any page even if it hasn't got a form.
     if ( ! is_page( 'contact' ) ) {
       wp_deregister_style( 'contact-form-7' );
     }
@@ -82,6 +83,8 @@ function scripts_and_styles() {
   }
 }
 
+// This deregisters scripts for contact-form-7
+// It loads with any page even if it hasn't got a form.
 function deregister_contact_form() {
     if ( ! is_page( 'contact' ) ) {
       remove_action('wp_enqueue_scripts', 'wpcf7_enqueue_scripts');
@@ -95,27 +98,63 @@ add_action( 'wp', 'deregister_contact_form');
 ///=============================================
 // 1A. LOAD GOOGLE WEBFONTS
 //=============================================
-// Copied from TwentyThirteen Theme
+// Copied from TwentyFifteen Theme
 
 
 function googleweb_fonts_url() {
-  $fonts_url = '';
+$fonts_url = '';
+  $fonts     = array();
+  $subsets   = 'latin,latin-ext';
 
-  /* Translators: If there are characters in your language that are not
-   * supported by Oswald, translate this to 'off'. Do not translate into your
-   * own language.
+  /*
+   * Translators: If there are characters in your language that are not supported
+   * by Noto Sans, translate this to 'off'. Do not translate into your own language.
    */
-  $merriweather = _x( 'on', 'Merriweather font: on or off', 'cleantheme;' );
-  if ( 'off' !== $merriweather ) {
-    $font_families = array();
-    $font_families[] = 'Merriweather:400,300,300italic,400italic,700,700italic';
-    $query_args = array(
-      'family' => urlencode( implode( '|', $font_families ) ),
-      'subset' => urlencode( 'latin,latin-ext' ),
-    );
-    $fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+  if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'cleantheme' ) ) {
+    $fonts[] = 'Noto Sans:400italic,700italic,400,700';
   }
+
+  /*
+   * Translators: If there are characters in your language that are not supported
+   * by Noto Serif, translate this to 'off'. Do not translate into your own language.
+   */
+  if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'cleantheme' ) ) {
+    $fonts[] = 'Noto Serif:400italic,700italic,400,700';
+  }
+
+  /*
+   * Translators: If there are characters in your language that are not supported
+   * by Inconsolata, translate this to 'off'. Do not translate into your own language.
+   */
+  if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'cleantheme' ) ) {
+    $fonts[] = 'Inconsolata:400,700';
+  }
+
+  /*
+   * Translators: To add an additional character subset specific to your language,
+   * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
+   */
+  $subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'cleantheme' );
+
+  if ( 'cyrillic' == $subset ) {
+    $subsets .= ',cyrillic,cyrillic-ext';
+  } elseif ( 'greek' == $subset ) {
+    $subsets .= ',greek,greek-ext';
+  } elseif ( 'devanagari' == $subset ) {
+    $subsets .= ',devanagari';
+  } elseif ( 'vietnamese' == $subset ) {
+    $subsets .= ',vietnamese';
+  }
+
+  if ( $fonts ) {
+    $fonts_url = add_query_arg( array(
+      'family' => urlencode( implode( '|', $fonts ) ),
+      'subset' => urlencode( $subsets ),
+    ), '//fonts.googleapis.com/css' );
+  }
+
   return $fonts_url;
+endif;
 }
 
 //=============================================
@@ -131,8 +170,6 @@ function cleantheme_edit_link() {
 //=============================================
 // Custom Post Type
 //=============================================
-
-// Custom Post Type 
 function my_custom_post_product() {
   $labels = array(
     'name'               => _x( 'Products', 'post type general name' ),
