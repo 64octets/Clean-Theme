@@ -39,4 +39,5 @@
 				
 		</header><!-- .site-header -->
 
-	<main id="main" class="site-main" role="main">
+	<main class="site-main" role="main">
+		<div class="site-content">

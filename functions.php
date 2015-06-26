@@ -105,7 +105,7 @@ function googleweb_fonts_url() {
    * supported by Oswald, translate this to 'off'. Do not translate into your
    * own language.
    */
-  $merriweather = _x( 'on', 'Merriweather font: on or off', 'ansforthewin15;' );
+  $merriweather = _x( 'on', 'Merriweather font: on or off', 'cleantheme;' );
   if ( 'off' !== $merriweather ) {
     $font_families = array();
     $font_families[] = 'Merriweather:400,300,300italic,400italic,700,700italic';
@@ -128,12 +128,38 @@ function cleantheme_edit_link() {
     endif;
 }
 
+//=============================================
+// Custom Post Type
+//=============================================
 
-add_post_type_support( 'work', 'post-formats' );
-$args = array(
-  'supports' => array('title', 'editor', 'author', 'post-formats')
-);
-register_post_type('work', $args);
+// Custom Post Type 
+function my_custom_post_product() {
+  $labels = array(
+    'name'               => _x( 'Products', 'post type general name' ),
+    'singular_name'      => _x( 'Product', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'book' ),
+    'add_new_item'       => __( 'Add New Product' ),
+    'edit_item'          => __( 'Edit Product' ),
+    'new_item'           => __( 'New Product' ),
+    'all_items'          => __( 'All Products' ),
+    'view_item'          => __( 'View Product' ),
+    'search_items'       => __( 'Search Products' ),
+    'not_found'          => __( 'No products found' ),
+    'not_found_in_trash' => __( 'No products found in the Trash' ), 
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Products'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Holds our products and product specific data',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+    'has_archive'   => true,
+  );
+  register_post_type( 'product', $args ); 
+}
+add_action( 'init', 'my_custom_post_product' );
 
 //=============================================
 // THE MENUS
@@ -269,7 +295,7 @@ if ( ! function_exists( 'cleantheme_entry_date' ) ) :
 
     $date = sprintf( '<span class="date"><time class="entry-date" datetime="%3$s">%4$s</time></span>',
       esc_url( get_permalink() ),
-      esc_attr( sprintf( __( 'Permalink to %s', 'classy' ), the_title_attribute( 'echo=0' ) ) ),
+      esc_attr( sprintf( __( 'Permalink to %s', 'cleantheme' ), the_title_attribute( 'echo=0' ) ) ),
       esc_attr( get_the_date( 'c' ) ),
       esc_html( sprintf( $format_prefix, get_post_format_string( get_post_format() ), get_the_date() ) )
     );

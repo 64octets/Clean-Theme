@@ -5,7 +5,7 @@
  * Contains the closing of the "site-content" div and all content after.
  */
 ?>
-
+	</div><!-- .site-content -->
 </main><!-- .site-main -->	
 
 	<footer id="colophon" class="site-footer" role="contentinfo">

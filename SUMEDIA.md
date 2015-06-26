@@ -9,9 +9,13 @@ Version: 0.01
 24 june 2015
 * flexslider partial added.
 
+26 june 2015
+* Supports custom post type
 
 
 To-Do
 * Responsive Typography needs attention.
 * Responsive images
+* Update the googlewebfont functions in functions.php
+
 

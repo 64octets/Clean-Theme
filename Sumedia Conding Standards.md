@@ -9,5 +9,6 @@
 * Remove all trailing spaces
 * Readability over file size saving (Saves time afterwards)
 * Do not use ID's unnecessarily
+* Keep the HTML as clean as possible.
 
 For PHP use: https://make.wordpress.org/core/handbook/coding-standards/php/
